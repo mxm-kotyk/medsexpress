@@ -1,19 +1,30 @@
-import { NavLink } from "react-router-dom";
+import {
+  HeaderContainer,
+  Logo,
+  NavList,
+  StyledHeader,
+  StyledNavLink,
+} from "./AppBar.styled";
 
 const AppBar = () => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Shop</NavLink>
-          </li>
-          <li>
-            <NavLink to="/cart">Shopping Cart</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <StyledHeader>
+      <HeaderContainer>
+        <Logo to="/">
+          <span>Meds</span>Express
+        </Logo>
+        <nav>
+          <NavList>
+            <li>
+              <StyledNavLink to="/">Shop</StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to="/cart">Shopping Cart</StyledNavLink>
+            </li>
+          </NavList>
+        </nav>
+      </HeaderContainer>
+    </StyledHeader>
   );
 };
 
