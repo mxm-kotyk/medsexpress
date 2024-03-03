@@ -1,14 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// const orderItemSchema = new Schema({
-//   itemName: { type: String, required: [true, "DB: itemName is required."] },
-//   quantity: {
-//     type: Number,
-//     min: 1,
-//     required: [true, "DB: quantity is required."],
-//   },
-// });
-
 const orderSchema = new Schema(
   {
     name: { type: String, required: [true, "DB: name is required."] },
@@ -18,14 +9,12 @@ const orderSchema = new Schema(
     items: [
       {
         itemName: String,
+        price: Number,
         quantity: { type: Number, min: 1 },
+        store: String,
         _id: { type: Schema.Types.ObjectId, ref: "drug", required: true },
       },
     ],
-    // items: {
-    //   type: [orderItemSchema],
-    //   required: [true, "DB: items can't be empty."],
-    // },
   },
   { versionKey: false, timestamps: true }
 );

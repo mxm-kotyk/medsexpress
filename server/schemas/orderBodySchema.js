@@ -21,7 +21,9 @@ module.exports = Joi.object({
     .items(
       Joi.object({
         itemName: Joi.string().required(),
+        price: Joi.number().required(),
         quantity: Joi.number().required(),
+        store: Joi.string().required(),
         _id: Joi.string().required(),
       })
     )
