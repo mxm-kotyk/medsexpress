@@ -1,6 +1,7 @@
 const path = require("path");
 const configPath = path.join(__dirname, "..", "config", ".env");
 const express = require("express");
+const cors = require("cors");
 
 require("dotenv").config({ path: configPath });
 require("colors");
@@ -10,6 +11,7 @@ const { notFoundUrl, errorHandler } = require("./middlewares");
 
 const app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
