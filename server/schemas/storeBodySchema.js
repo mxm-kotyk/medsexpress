@@ -5,7 +5,7 @@ module.exports = Joi.object({
     "string.empty": `"name" cannot be an empty field`,
     "any.required": `missing required "name" field`,
   }),
-  address: Joi.number().required().messages({
+  address: Joi.string().required().messages({
     "string.empty": `"address" cannot be an empty field`,
     "any.required": `missing required "address" field`,
   }),
