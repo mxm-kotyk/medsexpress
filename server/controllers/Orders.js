@@ -13,10 +13,6 @@ class Orders {
     });
   });
 
-  // getOneOrder = asyncHandler(async (req, res) => {
-  //   res.send("get one order");
-  // });
-
   addOrder = asyncHandler(async (req, res) => {
     const order = await OrderModel.create({ ...req.body });
     res.status(201);
