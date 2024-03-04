@@ -14,7 +14,15 @@ export const api = createApi({
       query: () => "/drugs",
       transformResponse: (response) => response.data,
     }),
+    submitOrder: builder.mutation({
+      query: (orderData) => ({
+        url: "/orders",
+        method: "POST",
+        body: orderData.payload,
+      }),
+    }),
   }),
 });
 
-export const { useGetStoresQuery, useGetDrugsQuery } = api;
+export const { useGetStoresQuery, useGetDrugsQuery, useSubmitOrderMutation } =
+  api;

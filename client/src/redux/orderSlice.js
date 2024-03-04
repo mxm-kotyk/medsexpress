@@ -27,11 +27,21 @@ export const orderSlice = createSlice({
         state.items[itemIndex].quantity -= 1;
       }
     },
+    removeFromOrder: (state, action) => {
+      return {
+        ...state,
+        items: state.items.filter((item) => item._id !== action.payload),
+      };
+    },
   },
 });
 
-export const { addToOrder, incrementQuantity, decrementQuantity } =
-  orderSlice.actions;
+export const {
+  addToOrder,
+  incrementQuantity,
+  decrementQuantity,
+  removeFromOrder,
+} = orderSlice.actions;
 
 const persistConfig = {
   key: "order",
