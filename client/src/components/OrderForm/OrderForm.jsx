@@ -57,7 +57,10 @@ const OrderForm = () => {
                 />
               );
             })}
-            <StyledSubmitButton type="submit" disabled={!(isValid && dirty)}>
+            <StyledSubmitButton
+              type="submit"
+              disabled={!(isValid && dirty) || orderItems.length < 1}
+            >
               Submit{" "}
             </StyledSubmitButton>
           </StyledForm>
