@@ -10,7 +10,7 @@ const Card = ({ drug, handleClick }) => {
             /\s/g,
             "+"
           )}`}
-          alt=""
+          alt={drug.name}
         />
         <CardInfoWrapper>
           <span>{drug.name}</span>
