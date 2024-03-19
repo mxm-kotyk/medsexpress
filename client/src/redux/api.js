@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://medsexpress-server-8f3b8145280d.herokuapp.com/api",
+    // baseUrl: "https://medsexpress-server-8f3b8145280d.herokuapp.com/api",
+    baseUrl: "https://medsexpress.onrender.com/api",
   }),
   endpoints: (builder) => ({
     getStores: builder.query({
